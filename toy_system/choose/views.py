@@ -25,7 +25,7 @@ def submit(request):
     for dish in menu:
         quant = int(request.POST['dish' + str(dish.id)])
         if quant != 0:
-            cust.orderrecord_set.create(dish_id=dish, quantity = quant)
+            cust.cust_order.create(dish_id=dish, quantity = quant)
             price += dish.cost * quant
     cust.total_price = price
     cust.save()
