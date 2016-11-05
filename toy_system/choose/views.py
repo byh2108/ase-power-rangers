@@ -18,7 +18,7 @@ def index(request):
 
 def submit(request):
     '''submit view, the view after submission'''
-    cust = CustRecord(name=request.POST["name"])
+    cust = CustRecord(name=request.POST["name"],table_id = request.POST["table_num"])
     price = 0
     cust.save()
     menu = Menu.objects.all()

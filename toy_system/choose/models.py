@@ -7,6 +7,7 @@ class Menu(models.Model):
     '''Menu class is for dish object'''
     name = models.CharField(max_length=20)
     cost = models.DecimalField(max_digits=5, decimal_places=2)
+    description = models.TextField(default = '')
 
     def __str__(self):
         return self.name
@@ -17,6 +18,7 @@ class CustRecord(models.Model):
     time = models.DateTimeField(default=timezone.now)
     total_price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
     payment = models.BooleanField(default=False)
+    table_id = models.IntegerField(default = 0)
     def __str__(self):
         return self.name
 

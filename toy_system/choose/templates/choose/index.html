@@ -15,6 +15,27 @@ $(function(){
     	})
 	})
 })
+
+$(function(){
+	$('input.dish').change(function(){
+		var num = 0
+		{% for i in list_of_pie.all %}
+			var item_name = 'dish{{i.id}}'
+			var quant = document.getElementsByName(item_name);
+		    num = num + parseFloat('{{i.cost}}') * quant['0'].value
+		{% endfor %}
+		$('#review_detail').html('Total Price is $' + num + '.')
+
+	})
+})
+
+function verify(){
+	if (document.forms[0].elements['name'].value=='') {
+	    alert('Please enter the remarks')
+	    return false;
+	}
+	return true
+}
 </script>
 {% endblock %}
 
@@ -25,18 +46,24 @@ $(function(){
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 <form action="{% url 'submit' %}" method="post">
-<p>name: <input type="text" name="name"></p>
+<p>name: <input type="text" name="name" required></p>
 <hr>
+<p>Table NO. <input type="number" name = 'table_num' value = "1" min="1" max="10"/> </p>
 
 {% csrf_token %}
 {% for dish in list_of_pie.all %}
 	<U><p class = 'dish' id = '{{dish.id}}'>{{ dish.name }} (${{dish.cost}}) </p></U>
-    <input type="number" name="dish{{ dish.id }}" id="dish{{ forloop.counter }}" value = "0" min="0" max="99"/>
+    <input class = 'dish' type="number" name="dish{{ dish.id }}" id="dish{{ forloop.counter }}" value = "0" min="0" max="99"/>
     <br>
 {% endfor %}
 <hr>
-<input type="submit" value="Submit" />
+<div id = 'review'>
+	<p id = 'review_detail'></p>
+</div>
+<input type="submit" value="Submit" onclick="return verify()"/>
 </form>
 <div id = 'dish_detail'>
 </div>
+
+
 {% endblock %}

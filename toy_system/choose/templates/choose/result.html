@@ -3,7 +3,8 @@
 {% block content %}
 
 <h1>Your Order</h1>
-<p>{{ cust.name }}. Here is your order detail. </p>
+<p> {{ cust.name }}, your Table No. is {{cust.table_id}}.</p>
+<p> Here is your order summary. </p>
 <hr>
 {% for orderrecord in cust.cust_order.all %}
     <p><b>{{ orderrecord.dish_id.name }}</b></p>
