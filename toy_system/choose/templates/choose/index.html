@@ -4,7 +4,6 @@
 <script>
 $(function(){
 	$('p.dish').click(function(){
-		console.log("aa")
 		$.post("{% url 'detail' %}",
 		{
 			'dish_id': this.id,
@@ -18,17 +17,19 @@ $(function(){
 
 $(function(){
 	$('input.dish').change(function(){
-		var num = 0
-		{% for i in list_of_pie.all %}
-			var item_name = 'dish{{i.id}}'
-			var quant = document.getElementsByName(item_name);
-		    num = num + parseFloat('{{i.cost}}') * quant['0'].value
-		{% endfor %}
-		$('#review_detail').html('Total Price is $' + num + '.')
-
+		CalculatePrice()
 	})
 })
 
+function CalculatePrice(){
+	var num = 0
+	{% for i in list_of_pie.all %}
+		var item_name = 'dish{{i.id}}'
+		var quant = document.getElementsByName(item_name);
+	    num = num + parseFloat('{{i.cost}}') * quant['0'].value
+	{% endfor %}
+	$('#review_detail').html('Total Price is $' + num + '.')
+}
 function verify(){
 	if (document.forms[0].elements['name'].value=='') {
 	    alert('Please enter the remarks')

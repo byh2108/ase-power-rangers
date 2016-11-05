@@ -3,3 +3,5 @@
 {% for image in dish.menu_image.all %}
 <img src={{image.photo.url}} height="100">
 {% endfor %}
+<br>
+Description: {{dish.description}}
