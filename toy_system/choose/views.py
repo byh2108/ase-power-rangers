@@ -19,15 +19,12 @@ def index(request):
 def submit(request):
     '''submit view, the view after submission'''
     cust = CustRecord(name=request.POST["name"],table_id = request.POST["table_num"])
-    price = 0
     cust.save()
     menu = Menu.objects.all()
     for dish in menu:
         quant = int(request.POST['dish' + str(dish.id)])
         if quant != 0:
             cust.cust_order.create(dish_id=dish, quantity = quant)
-            price += dish.cost * quant
-    cust.total_price = price
     cust.save()
     return HttpResponseRedirect(reverse('result', args=(cust.id,)))
 

@@ -17,9 +17,23 @@ $(function(){
 
 $(function(){
 	$('input.dish').change(function(){
-		CalculatePrice()
+		ShowPrice()
 	})
 })
+
+function verify(){
+	if (document.forms[0].elements['name'].value=='') {
+	    alert('Please enter your name')
+	    return false;
+	}
+	var num = CalculatePrice()
+	console.log(num)
+	if (CalculatePrice()==0){
+		alert('Please choose some dishes before submit')
+	    return false;
+	}
+	return true
+}
 
 function CalculatePrice(){
 	var num = 0
@@ -28,15 +42,14 @@ function CalculatePrice(){
 		var quant = document.getElementsByName(item_name);
 	    num = num + parseFloat('{{i.cost}}') * quant['0'].value
 	{% endfor %}
+	return num
+}
+
+function ShowPrice(){
+	var num = CalculatePrice()
 	$('#review_detail').html('Total Price is $' + num + '.')
 }
-function verify(){
-	if (document.forms[0].elements['name'].value=='') {
-	    alert('Please enter the remarks')
-	    return false;
-	}
-	return true
-}
+
 </script>
 {% endblock %}
 

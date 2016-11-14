@@ -16,11 +16,15 @@ class CustRecord(models.Model):
     '''Each order is a CustRecord object'''
     name = models.CharField(max_length=20)
     time = models.DateTimeField(default=timezone.now)
-    total_price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
     payment = models.BooleanField(default=False)
     table_id = models.IntegerField(default = 0)
     def __str__(self):
         return self.name
+    def total_price(self):
+        total = 0
+        for i in self.cust_order.all():
+            total += i.quantity * i.dish_id.cost
+        return total
 
 class OrderRecord(models.Model):
     '''Each dish in the order is an OrderRecord object'''
