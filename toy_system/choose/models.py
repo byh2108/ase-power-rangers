@@ -23,6 +23,10 @@ class CustRecord(models.Model):
     def total_price(self):
         total = 0
         for i in self.cust_order.all():
+            if(isinstance(i.quantity, int)==False or i.quantity < 0):
+                return -1
+            if(i.dish_id.cost < 0):
+                return -1
             total += i.quantity * i.dish_id.cost
         return total
 

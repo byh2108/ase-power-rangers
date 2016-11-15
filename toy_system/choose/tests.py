@@ -48,3 +48,52 @@ class TotalPriceMethodTests(TestCase):
     	self.assertEqual(new_record.total_price(), 27)
 
 
+#Team assignment 4 test case
+    def test_price_with_neg_price(self):
+        new_record = create_new_record('test')
+        new_dish = create_new_dish('Lobster',-100)
+        new_dish2 = create_new_dish('Jello',-50)
+        new_record.cust_order.create(dish_id = new_dish,quantity=2)
+        new_record.cust_order.create(dish_id = new_dish2,quantity=2)
+        self.assertEqual(new_record.total_price(), -1)
+
+    def test_price_with_all_neg(self):
+        new_record = create_new_record('test')
+        new_dish = create_new_dish('Lobster',-100)
+        new_dish2 = create_new_dish('Jello',-50)
+        new_record.cust_order.create(dish_id = new_dish,quantity=-2)
+        new_record.cust_order.create(dish_id = new_dish2,quantity=-2)
+        self.assertEqual(new_record.total_price(), -1)
+
+    def test_price_with_all_pos(self):
+        new_record = create_new_record('test')
+        new_dish = create_new_dish('Lobster',100)
+        new_dish2 = create_new_dish('Jello',50)
+        new_record.cust_order.create(dish_id = new_dish,quantity=2)
+        new_record.cust_order.create(dish_id = new_dish2,quantity=2)
+        self.assertEqual(new_record.total_price(), 300)
+
+    def test_price_with_some_pos_some_neg(self):
+        new_record = create_new_record('test')
+        new_dish = create_new_dish('Lobster',100)
+        new_dish2 = create_new_dish('Jello',50)
+        new_record.cust_order.create(dish_id = new_dish,quantity=-2)
+        new_record.cust_order.create(dish_id = new_dish2,quantity=2)
+        self.assertEqual(new_record.total_price(), -1)
+
+    def test_price_with_zero_quan(self):
+        new_record = create_new_record('test')
+        new_dish = create_new_dish('Lobster',100)
+        new_dish2 = create_new_dish('Jello',50)
+        new_record.cust_order.create(dish_id = new_dish,quantity=0)
+        new_record.cust_order.create(dish_id = new_dish2,quantity=0)
+        self.assertEqual(new_record.total_price(), 0)
+
+    def test_price_with_dec_quan(self):
+        new_record = create_new_record('test')
+        new_dish = create_new_dish('Lobster',100)
+        new_dish2 = create_new_dish('Jello',50)
+        new_record.cust_order.create(dish_id = new_dish,quantity=2.3)
+        new_record.cust_order.create(dish_id = new_dish2,quantity=2.00)
+        self.assertEqual(new_record.total_price(), 300)
+
