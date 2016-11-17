@@ -2,7 +2,7 @@
 ASE Power Rangers
 
 Instructions:
-In the /toy_system directory, run the following script:
+In the /toy_system/choose directory, run the following script:
 
 python manage.py runserver
 
@@ -14,3 +14,5 @@ http://127.0.0.1:8000/admin for the admin view.
 The admin login information is:
 Username: admin
 Password: admin
+
+To run the unit tests, run: python manage.py test
