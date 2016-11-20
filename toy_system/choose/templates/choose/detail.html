@@ -1,7 +1,11 @@
 <hr>
 <p>{{dish.name}} ${{dish.cost}}</p>
 {% for image in dish.menu_image.all %}
-<img src={{image.photo.url}} height="100">
+<img src={{image.photo}} height="100">
+{% endfor %}
+{% for video in dish.menu_video.all %}
+<br>
+<iframe id="item_video" width="680" height="400" src={{video.video}}></iframe>
 {% endfor %}
 <br>
 Description: {{dish.description}}
