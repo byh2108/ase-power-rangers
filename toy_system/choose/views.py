@@ -21,7 +21,7 @@ def index(request):
 
 def submit(request):
     '''submit view, the view after submission'''
-    cust = CustRecord(name=request.POST["name"],table_id = request.POST["table_num"])
+    cust = CustRecord(name=request.POST["name"],table_id = request.POST["table_num"], comments=request.POST["comments"])
     cust.save()
     menu = Menu.objects.all()
     for dish in menu:
