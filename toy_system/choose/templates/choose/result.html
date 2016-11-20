@@ -5,13 +5,20 @@
 <h1>Your Order</h1>
 <p> {{ cust.name }}, your Table No. is {{cust.table_id}}.</p>
 <p> Here is your order summary. </p>
-<hr>
-{% for orderrecord in cust.cust_order.all %}
-    <p><b>{{ orderrecord.dish_id.name }}</b></p>
-    <p>${{ orderrecord.dish_id.cost }} * {{orderrecord.quantity}}</p>
-{% endfor %}
-<hr>
-<p> Total price: ${{cust.total_price}}</p>
+
+
+<table>
+	{% for orderrecord in cust.cust_order.all %}
+	<tr>
+		<td>{{ orderrecord.dish_id.name }}</td>
+		<td><textarea cols = '40' rows = '5'></textarea></td>
+	</tr>
+	<tr>
+		<td>${{ orderrecord.dish_id.cost }} * {{orderrecord.quantity}}</td>
+		<td><button>Submit Review</button></td>
+	</tr>
+	{% endfor %}
+</table>
 
 <a href="{% url 'index' %}">Order again</a>
 
