@@ -45,8 +45,11 @@ class OrderRecord(models.Model):
     served = models.BooleanField(default=False)
 
 class MenuImage(models.Model):
+    name = models.CharField(max_length=20, default = '')
     photo = models.ImageField(upload_to='menu/')
     menu_image = models.ForeignKey(Menu,related_name='menu_image')
+    def __str__(self):
+        return self.name
 
 class MenuVideo(models.Model):
     video = models.URLField()
