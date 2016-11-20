@@ -1,13 +1,16 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import Http404
+from django.http import Http404, HttpResponse
 # Create your views here.
 from django.http import HttpResponseRedirect
+import json
+from django.http import JsonResponse
 #from django.template import loader
 
 from django.utils import timezone
 #from django.urls import reverse
 from django.core.urlresolvers import reverse
-from .models import Menu, CustRecord
+from .models import Menu, CustRecord, Review
+
 def index(request):
     '''index view'''
     list_of_pie = Menu.objects.all()
@@ -34,7 +37,6 @@ def result(request, cust_id):
     return render(request, 'choose/result.html', {'cust': cust})
 
 def detail(request):
-    print ("aa")
     if request.method == "POST":
         dish_id = request.POST['dish_id']
         dish = get_object_or_404(Menu, id = dish_id)
@@ -45,3 +47,18 @@ def detail(request):
     else:
         raise Http404("")
 
+def review(request):
+    if request.method == "POST":
+        dish_id = request.POST['dish_id']
+        cust_id = request.POST['cust_id']
+        context = request.POST['context']
+        dish = get_object_or_404(Menu, id = dish_id)
+        cust = get_object_or_404(CustRecord, id = cust_id)
+        new_review = Review(cust_id = cust, dish_id = dish, context= context)
+        new_review.save()
+        context = {
+            'success':1,
+        }
+        return JsonResponse(context)
+    else:
+        raise Http404("")

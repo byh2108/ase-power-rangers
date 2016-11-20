@@ -4,11 +4,24 @@
 <script>
 $(function(){
 	$('button.submit-review').click(function(){
+		var dish = this;
 		var dish_id = this.id;
 		var textarea = document.getElementById('review_context_'+dish_id);
-		console.log(textarea.value)
-
-
+		if (textarea.value != ''){
+			$.post("{% url 'review' %}",
+			{
+				'dish_id': dish_id,
+				'cust_id': '{{ cust.id }}',
+				'context': textarea.value,
+				'csrfmiddlewaretoken': '{{ csrf_token }}'
+			},
+			function(data, status){
+				if (data.success = 1){
+					dish.setAttribute("hidden", true);
+					textarea.setAttribute("disabled",true);
+				}
+	    	})
+		}
 	})
 })
 </script>

@@ -1,5 +1,15 @@
 <hr>
 <p>{{dish.name}} ${{dish.cost}}</p>
+
+<table>
+{% for review in dish.dish_review.all %}
+<tr>
+	<td>{{review.context}}</td>
+	<td>{{review.cust_id.name}}</td>
+</tr>
+{% endfor %}
+</table>
+
 {% for image in dish.menu_image.all %}
 <img src={{image.photo}} height="100">
 {% endfor %}
