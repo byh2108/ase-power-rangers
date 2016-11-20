@@ -25,6 +25,7 @@ class CustRecord(models.Model):
     time = models.DateTimeField(default=timezone.now)
     payment = models.BooleanField(default=False)
     table_id = models.IntegerField(default = 0)
+    comments = models.TextField(default = '')
     def __str__(self):
         return self.name
     def total_price(self):
@@ -43,6 +44,11 @@ class OrderRecord(models.Model):
     dish_id = models.ForeignKey(Menu, on_delete=models.CASCADE,related_name = 'dish_order')
     quantity = models.PositiveSmallIntegerField()
     served = models.BooleanField(default=False)
+
+class Review(models.Model):
+    cust_id = models.ForeignKey(CustRecord, on_delete=models.CASCADE,related_name = 'cust_review')
+    dish_id = models.ForeignKey(Menu, on_delete=models.CASCADE,related_name = 'dish_review')
+    context = models.TextField()
 
 class MenuImage(models.Model):
     name = models.CharField(max_length=20, default = '')
