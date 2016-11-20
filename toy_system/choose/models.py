@@ -5,9 +5,16 @@ from django.utils import timezone
 
 class Menu(models.Model):
     '''Menu class is for dish object'''
+    CATEGORY = (
+        ('AP', 'Appetizer'),
+        ('MC', 'Main Course'),
+        ('DE', 'Dessert'),
+        ('BE', 'Beverage'),
+    )
     name = models.CharField(max_length=20)
     cost = models.DecimalField(max_digits=5, decimal_places=2)
     description = models.TextField(default = '')
+    categories = models.CharField(choices=CATEGORY, default = 'Appetizer',max_length = 20)
 
     def __str__(self):
         return self.name
