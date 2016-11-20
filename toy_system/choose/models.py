@@ -47,6 +47,8 @@ class OrderRecord(models.Model):
 class MenuImage(models.Model):
     photo = models.ImageField(upload_to='menu/')
     menu_image = models.ForeignKey(Menu,related_name='menu_image')
+    def __str__(self):
+        return self.photo.name
 
 class MenuVideo(models.Model):
     video = models.URLField()
