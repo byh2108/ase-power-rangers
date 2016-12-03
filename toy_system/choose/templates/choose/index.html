@@ -3,6 +3,9 @@
 {% block script %}
 <script>
 $(function(){
+	$("[type='number']").keydown(function (evt) {
+	    evt.preventDefault();
+	});
 	$('p.dish').click(function(){
 		$.post("{% url 'detail' %}",
 		{
