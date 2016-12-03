@@ -1,17 +1,8 @@
 <hr>
 <p>{{dish.name}} ${{dish.cost}}</p>
 
-<table>
-{% for review in dish.dish_review.all %}
-<tr>
-	<td>{{review.context}}</td>
-	<td>{{review.cust_id.name}}</td>
-</tr>
-{% endfor %}
-</table>
-
 {% for image in dish.menu_image.all %}
-<img src={{image.photo}} height="100">
+<img src={{image.photo.url}} height="100">
 {% endfor %}
 {% for video in dish.menu_video.all %}
 <br>
@@ -19,3 +10,20 @@
 {% endfor %}
 <br>
 Description: {{dish.description}}
+
+<hr>
+<br>
+<table border = "1">
+<tr>
+	<td>Review</td>
+	<td>Customer Name</td>
+	<td>Comment Date</td>
+</tr>
+{% for review in dish.dish_review.all %}
+<tr>
+	<td>{{review.context}}</td>
+	<td>{{review.cust_id.name}}</td>
+	<td>{{review.create_date}}</td>
+</tr>
+{% endfor %}
+</table>

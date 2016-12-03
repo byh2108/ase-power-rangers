@@ -49,10 +49,11 @@ class Review(models.Model):
     cust_id = models.ForeignKey(CustRecord, on_delete=models.CASCADE,related_name = 'cust_review')
     dish_id = models.ForeignKey(Menu, on_delete=models.CASCADE,related_name = 'dish_review')
     context = models.TextField()
+    create_date = models.DateTimeField(default=timezone.now)
 
 class MenuImage(models.Model):
     name = models.CharField(max_length=20, default = '')
-    photo = models.ImageField(upload_to='/menu/')
+    photo = models.ImageField(upload_to='menu/')
     menu_image = models.ForeignKey(Menu,related_name='menu_image')
     def __str__(self):
         return self.name

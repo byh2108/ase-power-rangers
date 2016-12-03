@@ -26,8 +26,6 @@ $(function(){
 })
 </script>
 {% endblock %}
-
-
 {% block content %}
 
 <h1>Your Order</h1>
@@ -39,7 +37,7 @@ $(function(){
 	{% for orderrecord in cust.cust_order.all %}
 	<tr>
 		<td>{{ orderrecord.dish_id.name }}</td>
-		<td><textarea cols = '40' rows = '5' id = 'review_context_{{ orderrecord.dish_id.id }}' ></textarea></td>
+		<td><textarea cols = '40' rows = '5' id = 'review_context_{{ orderrecord.dish_id.id }}' >aaa</textarea></td>
 	</tr>
 	<tr>
 		<td>${{ orderrecord.dish_id.cost }} * {{orderrecord.quantity}}</td>
