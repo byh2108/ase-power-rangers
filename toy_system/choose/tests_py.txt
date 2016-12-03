@@ -1,0 +1,373 @@
+************* Module choose.tests
+C:  7, 0: Exactly one space required after comma
+def create_new_dish(name,cost):
+                        ^ (bad-whitespace)
+C:  8, 0: Exactly one space required after comma
+    new_dish = Menu(name=name,cost=cost)
+                             ^ (bad-whitespace)
+W: 23, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+W: 24, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 24, 0: Exactly one space required after comma
+    	new_dish = create_new_dish('pie',10.5)
+                                     ^ (bad-whitespace)
+W: 25, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 25, 0: No space allowed around keyword argument assignment
+    	new_record.cust_order.create(dish_id = new_dish ,quantity=1)
+                                          ^ (bad-whitespace)
+C: 25, 0: No space allowed before comma
+    	new_record.cust_order.create(dish_id = new_dish ,quantity=1)
+                                                     ^ (bad-whitespace)
+C: 25, 0: Exactly one space required after comma
+    	new_record.cust_order.create(dish_id = new_dish ,quantity=1)
+                                                     ^ (bad-whitespace)
+W: 26, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+W: 29, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+W: 30, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 30, 0: Exactly one space required after comma
+    	new_dish = create_new_dish('pie',10.5)
+                                     ^ (bad-whitespace)
+W: 31, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 31, 0: No space allowed around keyword argument assignment
+    	new_record.cust_order.create(dish_id = new_dish ,quantity=3)
+                                          ^ (bad-whitespace)
+C: 31, 0: No space allowed before comma
+    	new_record.cust_order.create(dish_id = new_dish ,quantity=3)
+                                                     ^ (bad-whitespace)
+C: 31, 0: Exactly one space required after comma
+    	new_record.cust_order.create(dish_id = new_dish ,quantity=3)
+                                                     ^ (bad-whitespace)
+W: 32, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+W: 35, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+W: 36, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 36, 0: Exactly one space required after comma
+    	new_dish = create_new_dish('pie',10.5)
+                                     ^ (bad-whitespace)
+W: 37, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 37, 0: Exactly one space required after comma
+    	new_dish2 = create_new_dish('pie_again',3)
+                                            ^ (bad-whitespace)
+W: 38, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 38, 0: No space allowed around keyword argument assignment
+    	new_record.cust_order.create(dish_id = new_dish ,quantity=1)
+                                          ^ (bad-whitespace)
+C: 38, 0: No space allowed before comma
+    	new_record.cust_order.create(dish_id = new_dish ,quantity=1)
+                                                     ^ (bad-whitespace)
+C: 38, 0: Exactly one space required after comma
+    	new_record.cust_order.create(dish_id = new_dish ,quantity=1)
+                                                     ^ (bad-whitespace)
+W: 39, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 39, 0: No space allowed around keyword argument assignment
+    	new_record.cust_order.create(dish_id = new_dish2 ,quantity=1)
+                                          ^ (bad-whitespace)
+C: 39, 0: No space allowed before comma
+    	new_record.cust_order.create(dish_id = new_dish2 ,quantity=1)
+                                                      ^ (bad-whitespace)
+C: 39, 0: Exactly one space required after comma
+    	new_record.cust_order.create(dish_id = new_dish2 ,quantity=1)
+                                                      ^ (bad-whitespace)
+W: 40, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+W: 43, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+W: 44, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 44, 0: Exactly one space required after comma
+    	new_dish = create_new_dish('pie',10.5)
+                                     ^ (bad-whitespace)
+W: 45, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 45, 0: Exactly one space required after comma
+    	new_dish2 = create_new_dish('pie_again',3)
+                                            ^ (bad-whitespace)
+W: 46, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 46, 0: No space allowed around keyword argument assignment
+    	new_record.cust_order.create(dish_id = new_dish ,quantity=2)
+                                          ^ (bad-whitespace)
+C: 46, 0: No space allowed before comma
+    	new_record.cust_order.create(dish_id = new_dish ,quantity=2)
+                                                     ^ (bad-whitespace)
+C: 46, 0: Exactly one space required after comma
+    	new_record.cust_order.create(dish_id = new_dish ,quantity=2)
+                                                     ^ (bad-whitespace)
+W: 47, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 47, 0: No space allowed around keyword argument assignment
+    	new_record.cust_order.create(dish_id = new_dish2 ,quantity=2)
+                                          ^ (bad-whitespace)
+C: 47, 0: No space allowed before comma
+    	new_record.cust_order.create(dish_id = new_dish2 ,quantity=2)
+                                                      ^ (bad-whitespace)
+C: 47, 0: Exactly one space required after comma
+    	new_record.cust_order.create(dish_id = new_dish2 ,quantity=2)
+                                                      ^ (bad-whitespace)
+W: 48, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 54, 0: Exactly one space required after comma
+        new_dish = create_new_dish('Lobster',-100)
+                                            ^ (bad-whitespace)
+C: 55, 0: Exactly one space required after comma
+        new_dish2 = create_new_dish('Jello',-50)
+                                           ^ (bad-whitespace)
+C: 56, 0: No space allowed around keyword argument assignment
+        new_record.cust_order.create(dish_id = new_dish,quantity=2)
+                                             ^ (bad-whitespace)
+C: 56, 0: Exactly one space required after comma
+        new_record.cust_order.create(dish_id = new_dish,quantity=2)
+                                                       ^ (bad-whitespace)
+C: 57, 0: No space allowed around keyword argument assignment
+        new_record.cust_order.create(dish_id = new_dish2,quantity=2)
+                                             ^ (bad-whitespace)
+C: 57, 0: Exactly one space required after comma
+        new_record.cust_order.create(dish_id = new_dish2,quantity=2)
+                                                        ^ (bad-whitespace)
+C: 62, 0: Exactly one space required after comma
+        new_dish = create_new_dish('Lobster',-100)
+                                            ^ (bad-whitespace)
+C: 63, 0: Exactly one space required after comma
+        new_dish2 = create_new_dish('Jello',-50)
+                                           ^ (bad-whitespace)
+C: 64, 0: No space allowed around keyword argument assignment
+        new_record.cust_order.create(dish_id = new_dish,quantity=-2)
+                                             ^ (bad-whitespace)
+C: 64, 0: Exactly one space required after comma
+        new_record.cust_order.create(dish_id = new_dish,quantity=-2)
+                                                       ^ (bad-whitespace)
+C: 65, 0: No space allowed around keyword argument assignment
+        new_record.cust_order.create(dish_id = new_dish2,quantity=-2)
+                                             ^ (bad-whitespace)
+C: 65, 0: Exactly one space required after comma
+        new_record.cust_order.create(dish_id = new_dish2,quantity=-2)
+                                                        ^ (bad-whitespace)
+C: 70, 0: Exactly one space required after comma
+        new_dish = create_new_dish('Lobster',100)
+                                            ^ (bad-whitespace)
+C: 71, 0: Exactly one space required after comma
+        new_dish2 = create_new_dish('Jello',50)
+                                           ^ (bad-whitespace)
+C: 72, 0: No space allowed around keyword argument assignment
+        new_record.cust_order.create(dish_id = new_dish,quantity=2)
+                                             ^ (bad-whitespace)
+C: 72, 0: Exactly one space required after comma
+        new_record.cust_order.create(dish_id = new_dish,quantity=2)
+                                                       ^ (bad-whitespace)
+C: 73, 0: No space allowed around keyword argument assignment
+        new_record.cust_order.create(dish_id = new_dish2,quantity=2)
+                                             ^ (bad-whitespace)
+C: 73, 0: Exactly one space required after comma
+        new_record.cust_order.create(dish_id = new_dish2,quantity=2)
+                                                        ^ (bad-whitespace)
+C: 78, 0: Exactly one space required after comma
+        new_dish = create_new_dish('Lobster',100)
+                                            ^ (bad-whitespace)
+C: 79, 0: Exactly one space required after comma
+        new_dish2 = create_new_dish('Jello',50)
+                                           ^ (bad-whitespace)
+C: 80, 0: No space allowed around keyword argument assignment
+        new_record.cust_order.create(dish_id = new_dish,quantity=-2)
+                                             ^ (bad-whitespace)
+C: 80, 0: Exactly one space required after comma
+        new_record.cust_order.create(dish_id = new_dish,quantity=-2)
+                                                       ^ (bad-whitespace)
+C: 81, 0: No space allowed around keyword argument assignment
+        new_record.cust_order.create(dish_id = new_dish2,quantity=2)
+                                             ^ (bad-whitespace)
+C: 81, 0: Exactly one space required after comma
+        new_record.cust_order.create(dish_id = new_dish2,quantity=2)
+                                                        ^ (bad-whitespace)
+C: 86, 0: Exactly one space required after comma
+        new_dish = create_new_dish('Lobster',100)
+                                            ^ (bad-whitespace)
+C: 87, 0: Exactly one space required after comma
+        new_dish2 = create_new_dish('Jello',50)
+                                           ^ (bad-whitespace)
+C: 88, 0: No space allowed around keyword argument assignment
+        new_record.cust_order.create(dish_id = new_dish,quantity=0)
+                                             ^ (bad-whitespace)
+C: 88, 0: Exactly one space required after comma
+        new_record.cust_order.create(dish_id = new_dish,quantity=0)
+                                                       ^ (bad-whitespace)
+C: 89, 0: No space allowed around keyword argument assignment
+        new_record.cust_order.create(dish_id = new_dish2,quantity=0)
+                                             ^ (bad-whitespace)
+C: 89, 0: Exactly one space required after comma
+        new_record.cust_order.create(dish_id = new_dish2,quantity=0)
+                                                        ^ (bad-whitespace)
+C: 94, 0: Exactly one space required after comma
+        new_dish = create_new_dish('Lobster',100)
+                                            ^ (bad-whitespace)
+C: 95, 0: Exactly one space required after comma
+        new_dish2 = create_new_dish('Jello',50)
+                                           ^ (bad-whitespace)
+C: 96, 0: No space allowed around keyword argument assignment
+        new_record.cust_order.create(dish_id = new_dish,quantity=2.3)
+                                             ^ (bad-whitespace)
+C: 96, 0: Exactly one space required after comma
+        new_record.cust_order.create(dish_id = new_dish,quantity=2.3)
+                                                       ^ (bad-whitespace)
+C: 97, 0: No space allowed around keyword argument assignment
+        new_record.cust_order.create(dish_id = new_dish2,quantity=2.00)
+                                             ^ (bad-whitespace)
+C: 97, 0: Exactly one space required after comma
+        new_record.cust_order.create(dish_id = new_dish2,quantity=2.00)
+                                                        ^ (bad-whitespace)
+C: 99, 0: Trailing newlines (trailing-newlines)
+C:  1, 0: Missing module docstring (missing-docstring)
+W:  2, 0: Wildcard import choose.models (wildcard-import)
+C:  7, 0: Missing function docstring (missing-docstring)
+C: 12, 0: Missing function docstring (missing-docstring)
+C: 17, 0: Missing class docstring (missing-docstring)
+C: 18, 4: Missing method docstring (missing-docstring)
+C: 22, 4: Invalid method name "test_price_with_one_items_one_quantity" (invalid-name)
+C: 22, 4: Missing method docstring (missing-docstring)
+E: 25, 5: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+C: 28, 4: Invalid method name "test_price_with_one_items_multi_quantity" (invalid-name)
+C: 28, 4: Missing method docstring (missing-docstring)
+E: 31, 5: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+C: 34, 4: Invalid method name "test_price_with_multi_items_one_quantity" (invalid-name)
+C: 34, 4: Missing method docstring (missing-docstring)
+E: 38, 5: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+E: 39, 5: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+C: 42, 4: Invalid method name "test_price_with_multi_items_multi_quantity" (invalid-name)
+C: 42, 4: Missing method docstring (missing-docstring)
+E: 46, 5: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+E: 47, 5: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+C: 52, 4: Missing method docstring (missing-docstring)
+E: 56, 8: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+E: 57, 8: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+C: 60, 4: Missing method docstring (missing-docstring)
+E: 64, 8: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+E: 65, 8: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+C: 68, 4: Missing method docstring (missing-docstring)
+E: 72, 8: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+E: 73, 8: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+C: 76, 4: Invalid method name "test_price_with_some_pos_some_neg" (invalid-name)
+C: 76, 4: Missing method docstring (missing-docstring)
+E: 80, 8: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+E: 81, 8: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+C: 84, 4: Missing method docstring (missing-docstring)
+E: 88, 8: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+E: 89, 8: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+C: 92, 4: Missing method docstring (missing-docstring)
+E: 96, 8: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+E: 97, 8: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+W:  2, 0: Unused import MenuImage from wildcard import (unused-wildcard-import)
+W:  2, 0: Unused import timezone from wildcard import (unused-wildcard-import)
+W:  2, 0: Unused import models from wildcard import (unused-wildcard-import)
+W:  2, 0: Unused import OrderRecord from wildcard import (unused-wildcard-import)
+W:  2, 0: Unused import MenuVideo from wildcard import (unused-wildcard-import)
+W:  2, 0: Unused import Review from wildcard import (unused-wildcard-import)
+W:  4, 0: Unused reverse imported from django.core.urlresolvers (unused-import)
+W:  5, 0: Unused Decimal imported from decimal (unused-import)
+C:  5, 0: standard import "from decimal import Decimal" comes before "from django.test import TestCase" (wrong-import-order)
+C:  4, 0: Imports from package django are not grouped (ungrouped-imports)
+
+
+Report
+======
+82 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |NC         |NC         |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |1      |NC         |NC         |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|method   |11     |NC         |NC         |0.00        |45.45    |
++---------+-------+-----------+-----------+------------+---------+
+|function |2      |NC         |NC         |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+External dependencies
+---------------------
+::
+
+    django 
+      \-core 
+      | \-urlresolvers (choose.tests)
+      \-test (choose.tests)
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |84     |83.17 |NC       |NC         |
++----------+-------+------+---------+-----------+
+|docstring |0      |0.00  |NC       |NC         |
++----------+-------+------+---------+-----------+
+|comment   |2      |1.98  |NC       |NC         |
++----------+-------+------+---------+-----------+
+|empty     |15     |14.85 |NC       |NC         |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |NC       |NC         |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |NC       |NC         |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |85     |NC       |NC         |
++-----------+-------+---------+-----------+
+|refactor   |0      |NC       |NC         |
++-----------+-------+---------+-----------+
+|warning    |29     |NC       |NC         |
++-----------+-------+---------+-----------+
+|error      |18     |NC       |NC         |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++-----------------------+------------+
+|message id             |occurrences |
++=======================+============+
+|bad-whitespace         |62          |
++-----------------------+------------+
+|mixed-indentation      |20          |
++-----------------------+------------+
+|no-member              |18          |
++-----------------------+------------+
+|missing-docstring      |15          |
++-----------------------+------------+
+|unused-wildcard-import |6           |
++-----------------------+------------+
+|invalid-name           |5           |
++-----------------------+------------+
+|unused-import          |2           |
++-----------------------+------------+
+|wrong-import-order     |1           |
++-----------------------+------------+
+|wildcard-import        |1           |
++-----------------------+------------+
+|ungrouped-imports      |1           |
++-----------------------+------------+
+|trailing-newlines      |1           |
++-----------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at -14.88/10
+
