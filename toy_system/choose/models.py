@@ -19,6 +19,9 @@ class Menu(models.Model):
     def __str__(self):
         return self.name
 
+    def few_reviews(self):
+        return self.dish_review.all().order_by('-create_date')[:3]
+
 class CustRecord(models.Model):
     '''Each order is a CustRecord object'''
     name = models.CharField(max_length=20)

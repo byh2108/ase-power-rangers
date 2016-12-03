@@ -19,7 +19,7 @@ Description: {{dish.description}}
 	<td>Customer Name</td>
 	<td>Comment Date</td>
 </tr>
-{% for review in dish.dish_review.all %}
+{% for review in dish.few_reviews %}
 <tr>
 	<td>{{review.context}}</td>
 	<td>{{review.cust_id.name}}</td>
