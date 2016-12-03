@@ -3,6 +3,17 @@
 {% block script %}
 <script>
 $(function(){
+	{% for review in cust.cust_review.all %}
+		var dish_id = '{{review.dish_id.id}}'
+		var context = '{{review.context}}'
+		if (context != ''){
+			var textarea = document.getElementById('review_context_'+dish_id)
+			textarea.value = context
+			textarea.setAttribute("disabled",true)
+			var button = document.getElementById(dish_id)
+			button.setAttribute("hidden", true);
+		}
+	{% endfor %}
 	$('button.submit-review').click(function(){
 		var dish = this;
 		var dish_id = this.id;
@@ -37,11 +48,11 @@ $(function(){
 	{% for orderrecord in cust.cust_order.all %}
 	<tr>
 		<td>{{ orderrecord.dish_id.name }}</td>
-		<td><textarea cols = '40' rows = '5' id = 'review_context_{{ orderrecord.dish_id.id }}' >aaa</textarea></td>
+		<td><textarea cols = '40' rows = '5' id = 'review_context_{{ orderrecord.dish_id.id }}' ></textarea></td>
 	</tr>
 	<tr>
 		<td>${{ orderrecord.dish_id.cost }} * {{orderrecord.quantity}}</td>
-		<td><button class = 'submit-review' id = {{ orderrecord.dish_id.id }}>Submit Review</button></td>
+		<td><button class = 'submit-review' id = {{ orderrecord.dish_id.id }} name = 'submit_button_{{ orderrecord.dish_id.id }}'>Submit Review</button></td>
 	</tr>
 	{% endfor %}
 </table>
