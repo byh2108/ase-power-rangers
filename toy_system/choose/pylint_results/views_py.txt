@@ -1,0 +1,157 @@
+************* Module choose.views
+C: 24, 0: Line too long (120/100) (line-too-long)
+C: 24, 0: Exactly one space required after comma
+    cust = CustRecord(name=request.POST["name"],table_id = request.POST["table_num"], comments=request.POST["comments"])
+                                               ^ (bad-whitespace)
+C: 24, 0: No space allowed around keyword argument assignment
+    cust = CustRecord(name=request.POST["name"],table_id = request.POST["table_num"], comments=request.POST["comments"])
+                                                         ^ (bad-whitespace)
+C: 30, 0: No space allowed around keyword argument assignment
+            cust.cust_order.create(dish_id=dish, quantity = quant)
+                                                          ^ (bad-whitespace)
+C: 42, 0: No space allowed around keyword argument assignment
+        dish = get_object_or_404(Menu, id = dish_id)
+                                          ^ (bad-whitespace)
+C: 46, 0: Exactly one space required after comma
+        return render(request,'choose/detail.html',context)
+                             ^ (bad-whitespace)
+C: 46, 0: Exactly one space required after comma
+        return render(request,'choose/detail.html',context)
+                                                  ^ (bad-whitespace)
+C: 55, 0: No space allowed around keyword argument assignment
+        dish = get_object_or_404(Menu, id = dish_id)
+                                          ^ (bad-whitespace)
+C: 56, 0: No space allowed around keyword argument assignment
+        cust = get_object_or_404(CustRecord, id = cust_id)
+                                                ^ (bad-whitespace)
+C: 57, 0: No space allowed around keyword argument assignment
+        new_review = Review(cust_id = cust, dish_id = dish, context= context)
+                                    ^ (bad-whitespace)
+C: 57, 0: No space allowed around keyword argument assignment
+        new_review = Review(cust_id = cust, dish_id = dish, context= context)
+                                                    ^ (bad-whitespace)
+C: 57, 0: No space allowed after keyword argument assignment
+        new_review = Review(cust_id = cust, dish_id = dish, context= context)
+                                                                   ^ (bad-whitespace)
+C:  1, 0: Missing module docstring (missing-docstring)
+E: 16,18: Class 'Menu' has no 'objects' member (no-member)
+E: 26,11: Class 'Menu' has no 'objects' member (no-member)
+E: 30,12: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+E: 32,56: Instance of 'CustRecord' has no 'id' member (no-member)
+C: 39, 0: Missing function docstring (missing-docstring)
+C: 50, 0: Missing function docstring (missing-docstring)
+W:  2, 0: Unused HttpResponse imported from django.http (unused-import)
+W:  5, 0: Unused import json (unused-import)
+W:  9, 0: Unused timezone imported from django.utils (unused-import)
+C:  5, 0: standard import "import json" comes before "from django.shortcuts import render, get_object_or_404" (wrong-import-order)
+
+
+Report
+======
+44 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |NC         |NC         |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |0      |NC         |NC         |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|method   |0      |NC         |NC         |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|function |5      |NC         |NC         |60.00       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+External dependencies
+---------------------
+::
+
+    choose 
+      \-models (choose.views)
+    django 
+      \-core 
+      | \-urlresolvers (choose.views)
+      \-http (choose.views)
+      \-shortcuts (choose.views)
+      \-utils 
+        \-timezone (choose.views)
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |51     |77.27 |NC       |NC         |
++----------+-------+------+---------+-----------+
+|docstring |6      |9.09  |NC       |NC         |
++----------+-------+------+---------+-----------+
+|comment   |3      |4.55  |NC       |NC         |
++----------+-------+------+---------+-----------+
+|empty     |6      |9.09  |NC       |NC         |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |NC       |NC         |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |NC       |NC         |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |16     |NC       |NC         |
++-----------+-------+---------+-----------+
+|refactor   |0      |NC       |NC         |
++-----------+-------+---------+-----------+
+|warning    |3      |NC       |NC         |
++-----------+-------+---------+-----------+
+|error      |4      |NC       |NC         |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++-------------------+------------+
+|message id         |occurrences |
++===================+============+
+|bad-whitespace     |11          |
++-------------------+------------+
+|no-member          |4           |
++-------------------+------------+
+|unused-import      |3           |
++-------------------+------------+
+|missing-docstring  |3           |
++-------------------+------------+
+|wrong-import-order |1           |
++-------------------+------------+
+|line-too-long      |1           |
++-------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at 1.14/10
+

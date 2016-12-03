@@ -1,0 +1,172 @@
+************* Module choose.models
+C: 16, 0: No space allowed around keyword argument assignment
+    description = models.TextField(default = '')
+                                           ^ (bad-whitespace)
+C: 17, 0: No space allowed around keyword argument assignment
+    categories = models.CharField(choices=CATEGORY, default = 'Appetizer',max_length = 20)
+                                                            ^ (bad-whitespace)
+C: 17, 0: Exactly one space required after comma
+    categories = models.CharField(choices=CATEGORY, default = 'Appetizer',max_length = 20)
+                                                                         ^ (bad-whitespace)
+C: 17, 0: No space allowed around keyword argument assignment
+    categories = models.CharField(choices=CATEGORY, default = 'Appetizer',max_length = 20)
+                                                                                     ^ (bad-whitespace)
+C: 27, 0: No space allowed around keyword argument assignment
+    table_id = models.IntegerField(default = 0)
+                                           ^ (bad-whitespace)
+C: 28, 0: No space allowed around keyword argument assignment
+    comments = models.TextField(default = '')
+                                        ^ (bad-whitespace)
+C: 34, 0: Unnecessary parens after 'if' keyword (superfluous-parens)
+C: 34, 0: Exactly one space required around comparison
+            if(isinstance(i.quantity, int)==False or i.quantity < 0):
+                                          ^^ (bad-whitespace)
+C: 36, 0: Unnecessary parens after 'if' keyword (superfluous-parens)
+C: 43, 0: Exactly one space required after comma
+    cust_id = models.ForeignKey(CustRecord, on_delete=models.CASCADE,related_name = 'cust_order')
+                                                                    ^ (bad-whitespace)
+C: 43, 0: No space allowed around keyword argument assignment
+    cust_id = models.ForeignKey(CustRecord, on_delete=models.CASCADE,related_name = 'cust_order')
+                                                                                  ^ (bad-whitespace)
+C: 44, 0: Exactly one space required after comma
+    dish_id = models.ForeignKey(Menu, on_delete=models.CASCADE,related_name = 'dish_order')
+                                                              ^ (bad-whitespace)
+C: 44, 0: No space allowed around keyword argument assignment
+    dish_id = models.ForeignKey(Menu, on_delete=models.CASCADE,related_name = 'dish_order')
+                                                                            ^ (bad-whitespace)
+C: 49, 0: Exactly one space required after comma
+    cust_id = models.ForeignKey(CustRecord, on_delete=models.CASCADE,related_name = 'cust_review')
+                                                                    ^ (bad-whitespace)
+C: 49, 0: No space allowed around keyword argument assignment
+    cust_id = models.ForeignKey(CustRecord, on_delete=models.CASCADE,related_name = 'cust_review')
+                                                                                  ^ (bad-whitespace)
+C: 50, 0: Exactly one space required after comma
+    dish_id = models.ForeignKey(Menu, on_delete=models.CASCADE,related_name = 'dish_review')
+                                                              ^ (bad-whitespace)
+C: 50, 0: No space allowed around keyword argument assignment
+    dish_id = models.ForeignKey(Menu, on_delete=models.CASCADE,related_name = 'dish_review')
+                                                                            ^ (bad-whitespace)
+C: 55, 0: No space allowed around keyword argument assignment
+    name = models.CharField(max_length=20, default = '')
+                                                   ^ (bad-whitespace)
+C: 57, 0: Exactly one space required after comma
+    menu_image = models.ForeignKey(Menu,related_name='menu_image')
+                                       ^ (bad-whitespace)
+C: 62, 0: No space allowed around keyword argument assignment
+    name = models.CharField(max_length=20, default = '')
+                                                   ^ (bad-whitespace)
+C: 64, 0: Exactly one space required after comma
+    menu_video = models.ForeignKey(Menu,related_name='menu_video')
+                                       ^ (bad-whitespace)
+C:  1, 0: Missing module docstring (missing-docstring)
+C: 31, 4: Missing method docstring (missing-docstring)
+E: 33,17: Instance of 'CustRecord' has no 'cust_order' member (no-member)
+C: 34,15: Comparison to False should be 'not expr' or 'expr is False' (singleton-comparison)
+C: 48, 0: Missing class docstring (missing-docstring)
+C: 54, 0: Missing class docstring (missing-docstring)
+C: 61, 0: Missing class docstring (missing-docstring)
+
+
+Report
+======
+49 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |1          |=          |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |6      |6          |=          |50.00       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|method   |5      |5          |=          |80.00       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|function |0      |0          |=          |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+External dependencies
+---------------------
+::
+
+    django 
+      \-db 
+      | \-models (choose.models)
+      \-utils 
+        \-timezone (choose.models)
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |56     |81.16 |56       |=          |
++----------+-------+------+---------+-----------+
+|docstring |3      |4.35  |3        |=          |
++----------+-------+------+---------+-----------+
+|comment   |1      |1.45  |1        |=          |
++----------+-------+------+---------+-----------+
+|empty     |9      |13.04 |9        |=          |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |0        |=          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |0.000    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |27     |27       |=          |
++-----------+-------+---------+-----------+
+|refactor   |0      |0        |=          |
++-----------+-------+---------+-----------+
+|warning    |0      |0        |=          |
++-----------+-------+---------+-----------+
+|error      |1      |1        |=          |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++---------------------+------------+
+|message id           |occurrences |
++=====================+============+
+|bad-whitespace       |19          |
++---------------------+------------+
+|missing-docstring    |5           |
++---------------------+------------+
+|superfluous-parens   |2           |
++---------------------+------------+
+|singleton-comparison |1           |
++---------------------+------------+
+|no-member            |1           |
++---------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at 3.47/10 (previous run: 3.47/10, +0.00)
+
