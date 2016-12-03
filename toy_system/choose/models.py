@@ -61,3 +61,6 @@ class MenuVideo(models.Model):
     name = models.CharField(max_length=20, default = '')
     video = models.URLField()
     menu_video = models.ForeignKey(Menu,related_name='menu_video')
+
+    def __str__(self):
+        return self.name
