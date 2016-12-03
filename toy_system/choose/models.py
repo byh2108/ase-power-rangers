@@ -44,12 +44,23 @@ class OrderRecord(models.Model):
     dish_id = models.ForeignKey(Menu, on_delete=models.CASCADE,related_name = 'dish_order')
     quantity = models.PositiveSmallIntegerField()
     served = models.BooleanField(default=False)
+    order_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        now = str(self.order_date)
+        x = "Order Date: " + now + " ---- Custmer Name:  " + self.cust_id.name
+        return x
 
 class Review(models.Model):
     cust_id = models.ForeignKey(CustRecord, on_delete=models.CASCADE,related_name = 'cust_review')
     dish_id = models.ForeignKey(Menu, on_delete=models.CASCADE,related_name = 'dish_review')
     context = models.TextField()
     create_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        now = str(self.create_date)
+        x = "Review Date: " + now + " ---- Custmer Name:  " + self.cust_id.name
+        return x
 
 class MenuImage(models.Model):
     name = models.CharField(max_length=20, default = '')
