@@ -36,7 +36,7 @@ class CustRecord(models.Model):
             if(i.dish_id.cost < 0):
                 return -1
             total += i.quantity * i.dish_id.cost
-        return total
+        return round(total, 2)
 
 class OrderRecord(models.Model):
     '''Each dish in the order is an OrderRecord object'''

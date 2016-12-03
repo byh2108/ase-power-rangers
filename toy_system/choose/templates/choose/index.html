@@ -42,7 +42,7 @@ function CalculatePrice(){
 		var quant = document.getElementsByName(item_name);
 	    num = num + parseFloat('{{i.cost}}') * quant['0'].value
 	{% endfor %}
-	return num
+	return num.toFixed(2)
 }
 
 function ShowPrice(){
