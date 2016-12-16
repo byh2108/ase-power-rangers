@@ -9,3 +9,5 @@ admin.site.register(OrderRecord)
 admin.site.register(MenuImage)
 admin.site.register(MenuVideo)
 admin.site.register(Review)
+
+# eare
